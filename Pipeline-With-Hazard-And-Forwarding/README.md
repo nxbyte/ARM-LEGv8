@@ -4,7 +4,7 @@
 
 This functional multi-cycle/pipelined processor is capable of performing basic arithmetic, logic and data operations. It is based on the ARM 64-bit architecture, with 32 registers each 64-bits wide with instruction lengths of 32-bits. 
 
-Basic assembly instructions: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B`` are supported by the CPU, with ``LDUR`` and ``STUR`` supporting immediate values when performing certain operations to the registers module.
+Basic assembly instructions: `LDUR`, `STUR`, `ADD`, `SUB`, `ORR`, `AND`, `CBZ`, `B`, and `NOP` are supported by the CPU, with `LDUR` and `STUR` supporting immediate values when performing certain operations to the registers module.
 
 In this version of the ARM CPU, the processor is pipelined to allow multiple instructions to run simultaneously. This is made possible with the addition of buffers/caches in between each stage of the processor's operation. This optimization reduces the amount of time to run each instruction and does protect against atomic reads in between register-base instructions. 
 
@@ -101,6 +101,13 @@ Example: ``B #2``
 
 - Sudo-C: ``PC = PC + 2``
 - Explanation: Jump two instructions
+
+### NOP: No Operation
+
+Example: ``NOP``
+
+- Sudo-C: ``;``
+- Explanation: An instruction that makes the processor wait one clock cycle.
 
 ## Test Program (Instructions)
 

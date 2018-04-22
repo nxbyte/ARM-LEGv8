@@ -4,7 +4,7 @@
 
 This is a repository that contains the source code for a Verilog based ARM LEGv8 CPU.
 
-Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``.
+Supported instructions include: `LDUR`, `STUR`, `ADD`, `SUB`, `ORR`, `AND`, `CBZ`, `B`, and `NOP`.
 
 This CPU is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
 
@@ -49,6 +49,7 @@ There are two ways to run and simulate the projects below. Either use the **Xili
 ## Credits
 
 - [Ralph Quinto](https://github.com/RakiRoad)
+- Nikita Eisenhauer
 
 ## License
 

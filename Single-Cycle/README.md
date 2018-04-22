@@ -4,7 +4,7 @@
 
 This functional single cycle (non-pipelined) processor is capable of performing basic arithmetic, logic and data operations. It is based on the ARM 64-bit architecture, with 32 registers each 64-bits wide with instruction lengths of 32-bits. 
 
-Basic assembly instructions: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B`` are supported by the CPU, with ``LDUR`` and ``STUR`` supporting immediate values when performing certain operations to the registers module.
+Basic assembly instructions: `LDUR`, `STUR`, `ADD`, `SUB`, `ORR`, `AND`, `CBZ`, `B`, and `NOP` are supported by the CPU, with `LDUR` and `STUR` supporting immediate values when performing certain operations to the registers module.
 
 During development, the group wrote a sample program (in ARMv7 assembly) and tested it on a Cypress PSoC 5LP and recorded its registers after each instruction. The group then verified this custom CPU with the state of the registers from the Cypress PSoC 5LP.
 
@@ -97,6 +97,13 @@ Example: ``B #2``
 
 - Sudo-C: ``PC = PC + 2``
 - Explanation: Jump two instructions
+
+### NOP: No Operation
+
+Example: ``NOP``
+
+- Sudo-C: ``;``
+- Explanation: An instruction that makes the processor wait one clock cycle.
 
 ## Test Program (Instructions)
 
