@@ -20,89 +20,89 @@ With the instruction memory, data memory and registers located outside the CPU i
 
 The examples below use the following 'variables' to show off the functionaility for each instruction:
 
-- ``r#``: Register # in the CPU (From 0 to 31)
-- ``RAM``: Random Access Memory (RAM) or Data Memory
-- ``PC``: Program Counter
+- `r#`: Register # in the CPU (From 0 to 31)
+- `RAM`: Random Access Memory (RAM) or Data Memory
+- `PC`: Program Counter
 
 ### LDUR: Load RAM into Registers
 
-Example 1: ``LDUR r2, [r10]``
+Example 1: `LDUR r2, [r10]`
 
-- Sudo-C code: ``r2 = RAM[r10]``
-- Explanation: Retrieve the value in memory at location ``r10`` and put that value into register ``r2``
+- Sudo-C code: `r2 = RAM[r10]`
+- Explanation: Retrieve the value in memory at location `r10` and put that value into register `r2`
 
-Example 2: ``LDUR r3, [r10, #1]``
+Example 2: `LDUR r3, [r10, #1]`
 
-- Sudo-C code: ``r3 = RAM[r10 + 1]``
-- Explanation: Retrieve the value in memory at the location ``r10 + immediate (1)`` and put that value into register ``r3``
+- Sudo-C code: `r3 = RAM[r10 + 1]`
+- Explanation: Retrieve the value in memory at the location `r10 + immediate (1)` and put that value into register `r3`
 
 ### STUR: Store Registers into RAM
 
-Example 1: ``STUR r1, [r9]``
+Example 1: `STUR r1, [r9]`
 
-- Sudo-C code: ``RAM[r9] = r1``
-- Explanation: Store the value of ``r1`` into memory at the location ``r9``
+- Sudo-C code: `RAM[r9] = r1`
+- Explanation: Store the value of `r1` into memory at the location `r9`
 
-Example 2: ``STUR r4, [r7, #1]``
+Example 2: `STUR r4, [r7, #1]`
 
-- Sudo-C code: ``RAM[r7 + 1] = r4``
-- Explanation: Store the value of ``r4`` into memory at the location ``r7 + immediate (1)``
+- Sudo-C code: `RAM[r7 + 1] = r4`
+- Explanation: Store the value of `r4` into memory at the location `r7 + immediate (1)`
 
 ### ADD: Add Registers
 
-Example: ``ADD r5, r3, r2``
+Example: `ADD r5, r3, r2`
 
-- Sudo-C code: ``r5 = r3 + r2``
-- Explanation: Add the values of ``r3`` and ``r2`` then put the result into ``r5``
+- Sudo-C code: `r5 = r3 + r2`
+- Explanation: Add the values of `r3` and `r2` then put the result into `r5`
 
 *Note: This does not support immediate values. Only values within the registers!*
 
 ### SUB: Subtract Registers
 
-Example: ``SUB r4, r3, r2``
+Example: `SUB r4, r3, r2`
 
-- Sudo-C code: ``r4 = r3 - r2``
-- Explanation: Subtract the values of ``r3`` and ``r2``  then put the result into ``r4``
+- Sudo-C code: `r4 = r3 - r2`
+- Explanation: Subtract the values of `r3` and `r2`  then put the result into `r4`
 
 *Note: This does not support immediate values. Only values within the registers!*
 
 ### ORR: Bit-wise OR Registers
 
-Example: ``ORR r6, r2, r3``
+Example: `ORR r6, r2, r3`
 
-- Sudo-C code: ``r6 = r2 | r3``
-- Explanation: Bit-wise OR the values of ``r2`` and ``r3`` then put the result into ``r6``
+- Sudo-C code: `r6 = r2 | r3`
+- Explanation: Bit-wise OR the values of `r2` and `r3` then put the result into `r6`
 
 *Note: This does not support immediate values. Only values within the registers!*
 
 ### AND: Bit-wise AND Registers
 
-Example: ``AND r4, r3, r2``
+Example: `AND r4, r3, r2`
 
-- Sudo-C code: ``r4 = r3 & r2``
-- Explanation: Bit-wise AND the values of ``r3`` and ``r2`` and put the result into ``r4``
+- Sudo-C code: `r4 = r3 & r2`
+- Explanation: Bit-wise AND the values of `r3` and `r2` and put the result into `r4`
 
 *Note: This does not support immediate values. Only values within the registers!*
 
 ### CBZ: Conditional Jump (when the value in Register is zero)
 
-Example: ``CBZ r1, #2``
+Example: `CBZ r1, #2`
 
-- Sudo-C code: ``if (r1 == 0) { PC = PC + 2 } else { PC++ }``
-- Explanation: If the value of ``r1`` is zero then jump two instructions, otherwise, continue executing ``PC++``
+- Sudo-C code: `if (r1 == 0) { PC = 2 } else { PC++ }`
+- Explanation: If the value of `r1` is zero then jump to instruction 2, otherwise, continue executing `PC++`
 
 ### B: Unconditional (arbitrary) Jump
 
-Example: ``B #2``
+Example: `B #2`
 
-- Sudo-C: ``PC = PC + 2``
-- Explanation: Jump two instructions
+- Sudo-C: `PC = 2`
+- Explanation: Jump to instruction 2
 
 ### NOP: No Operation
 
-Example: ``NOP``
+Example: `NOP`
 
-- Sudo-C: ``;``
+- Sudo-C: `;`
 - Explanation: An instruction that makes the processor wait one clock cycle.
 
 ## Test Program (Instructions)
@@ -111,19 +111,19 @@ The thirteen instructions as shown in the table below is the test program used t
 
 | Line # |      ARM Assembly     |                Machine Code             | Hexadecimal|
 |:------:|:----------------------|:---------------------------------------:|:----------:|
-|    1   | ``LDUR r2, [r10]``    | 1111 1000 0100 0000 0000 0001 0100 0010 | 0xF8400142 |
-|    2   | ``LDUR r3, [r10, #1]``| 1111 1000 0100 0000 0001 0001 0100 0011 | 0xF8401143 |
-|    3   | ``SUB r4, r3, r2``    | 1100 1011 0000 0010 0000 0000 0110 0100 | 0xCB020064 |
-|    4   | ``ADD r5, r3, r2``    | 1000 1011 0000 0010 0000 0000 0110 0101 | 0x8B020065 |
-|    5   | ``CBZ r1, #2``        | 1011 0100 0000 0000 0000 0000 0100 0001 | 0xB4000041 |
-|    6   | ``CBZ r0, #2``        | 1011 0100 0000 0000 0000 0000 0100 0000 | 0xB4000040 |
-|    7   | ``LDUR r2, [r10]``    | 1111 1000 0100 0000 0000 0001 0100 0010 | 0xF8400142 |
-|    8   | ``ORR r6, r2, r3``    | 1010 1010 0000 0011 0000 0000 0100 0110 | 0xAA030046 |
-|    9   | ``AND r7, r2, r3``    | 1000 1010 0000 0011 0000 0000 0100 0111 | 0x8A030047 |
-|   10   | ``STUR r4, [r7, #1]`` | 1111 1000 0000 0000 0001 0000 1110 0100 | 0xF80010E4 |
-|   11   | ``B #2``              | 0001 0100 0000 0000 0000 0000 0000 0011 | 0x14000003 |
-|   12   | ``LDUR r3, [r10, #1]``| 1111 1000 0100 0000 0001 0001 0100 0011 | 0xF8401143 |
-|   13   | ``ADD r8, r0, r1``    | 1000 1011 0000 0001 0000 0000 0000 1000 | 0x8B010008 |
+|    1   | `LDUR r2, [r10]`    | 1111 1000 0100 0000 0000 0001 0100 0010 | 0xF8400142 |
+|    2   | `LDUR r3, [r10, #1]`| 1111 1000 0100 0000 0001 0001 0100 0011 | 0xF8401143 |
+|    3   | `SUB r4, r3, r2`    | 1100 1011 0000 0010 0000 0000 0110 0100 | 0xCB020064 |
+|    4   | `ADD r5, r3, r2`    | 1000 1011 0000 0010 0000 0000 0110 0101 | 0x8B020065 |
+|    5   | `CBZ r1, #2`        | 1011 0100 0000 0000 0000 0000 0100 0001 | 0xB4000041 |
+|    6   | `CBZ r0, #2`        | 1011 0100 0000 0000 0000 0000 0100 0000 | 0xB4000040 |
+|    7   | `LDUR r2, [r10]`    | 1111 1000 0100 0000 0000 0001 0100 0010 | 0xF8400142 |
+|    8   | `ORR r6, r2, r3`    | 1010 1010 0000 0011 0000 0000 0100 0110 | 0xAA030046 |
+|    9   | `AND r7, r2, r3`    | 1000 1010 0000 0011 0000 0000 0100 0111 | 0x8A030047 |
+|   10   | `STUR r4, [r7, #1]` | 1111 1000 0000 0000 0001 0000 1110 0100 | 0xF80010E4 |
+|   11   | `B #2`              | 0001 0100 0000 0000 0000 0000 0000 0011 | 0x14000003 |
+|   12   | `LDUR r3, [r10, #1]`| 1111 1000 0100 0000 0001 0001 0100 0011 | 0xF8401143 |
+|   13   | `ADD r8, r0, r1`    | 1000 1011 0000 0001 0000 0000 0000 1000 | 0x8B010008 |
 
 ## Test Program (Registers and Data Memory Setup)
 
