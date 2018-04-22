@@ -46,6 +46,10 @@ There are two ways to run and simulate the projects below. Either use the **Xili
 - Testbench + Design: SystemVerilog/Verilog
 - Tools & Simulators: Icarus Verilog 0.9.7
 
+## Credits
+
+- [Ralph Quinto](https://github.com/RakiRoad)
+
 ## License
 
 All source code in **ARM-LEGv8** are released under the MIT license. See LICENSE for details.

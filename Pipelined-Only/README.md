@@ -100,6 +100,36 @@ Example: ``B #2``
 - Sudo-C: ``PC = PC + 2``
 - Explanation: Jump two instructions
 
+## Test Program (Instructions)
+
+The thirteen instructions as shown in the table below is the test program used to test the functionality of the CPU.
+
+| Line # |      ARM Assembly     |                Machine Code             | Hexadecimal|
+|:------:|:----------------------|:---------------------------------------:|:----------:|
+|    1   | ``LDUR r2, [r12]``    | 1111 1000 0100 0000 0000 0001 1000 0010 | 0xf8400182 |
+|    2   | ``LDUR r3, [r13]``    | 1111 1000 0100 0000 0000 0001 1010 0011 | 0xf84001a3 |
+|    3   | ``ORR x5, x20, x1``   | 1010 1010 0000 0001 0000 0010 1000 0101 | 0xaa010285 |
+|    4   | ``AND x6, x28, x27``  | 1000 1010 0001 1011 0000 0011 1000 0110 | 0x8a1b0386 |
+|    5   | ``NOP``               | 0000 0000 0000 0000 0000 0000 0000 0000 | 0x00000000 |
+|    6   | ``ADD x9, x3, x2``    | 1000 1011 0000 0010 0000 0000 0110 1001 | 0x8b020069 |
+|    7   | ``SUB x10, x3, x2``   | 1100 1011 0000 0010 0000 0000 0110 1010 | 0xcb02006a |
+|    8   | ``CBZ x6, #13``       | 1011 0100 0000 0000 0000 0001 1010 0110 | 0xb40001a6 |
+|    9   | ``NOP``               | 0000 0000 0000 0000 0000 0000 0000 0000 | 0x00000000 |
+|   10   | ``SUB X11, x9, x3``   | 1100 1011 0000 0011 0000 0001 0010 1011 | 0xcb03012b |
+|   11   | ``AND x9, x9, x10``   | 1000 1010 0000 1010 0000 0001 0010 1001 | 0x8a0a0129 |
+|   12   | ``STUR x5, [x7, #1]`` | 1111 1000 0000 0000 0001 0000 1110 0101 | 0xf80010e5 |
+|   13   | ``AND x3, x2, x10``   | 1000 1010 0000 1010 0000 0000 0100 0011 | 0x8a0a0043 |
+|   14   | ``ORR x21, x25, x24`` | 1010 1010 0001 1000 0000 0011 0011 0101 | 0xaa180335 |
+|   15   | ``B #20``             | 0001 0100 0000 0000 0000 0000 0001 0100 | 0x14000014 |
+
+## Test Program (Registers and Data Memory Setup)
+
+The instructions were entered into the instruction memory itself to properly show its functionality while simulated. 
+
+The Registers were initialized with values from 0-30 with register 31 defined set to 0 as stated in the reference sheet for LEGv8. 
+
+The Data Memory was initialized with values starting from 0-3100 with each content of memory being 100 more than the previous index with an exception of index 12 and 13 with the contents 173 and 422 respectively.
+
 ## Source Directories
 
 - **ARM LEGv8 CPU Module** - ARM_CPU.v

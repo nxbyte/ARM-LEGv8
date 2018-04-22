@@ -118,7 +118,7 @@ The thirteen instructions as shown in the table below is the test program used t
 |   12   | ``LDUR r3, [r10, #1]``| 1111 1000 0100 0000 0001 0001 0100 0011 | 0xF8401143 |
 |   13   | ``ADD r8, r0, r1``    | 1000 1011 0000 0001 0000 0000 0000 1000 | 0x8B010008 |
 
-## Test Program (Register and Data Memory Setup)
+## Test Program (Registers and Data Memory Setup)
 
 The instructions were entered into the instruction memory itself to properly show its functionality while simulated. 
 

@@ -102,6 +102,31 @@ Example: ``B #2``
 - Sudo-C: ``PC = PC + 2``
 - Explanation: Jump two instructions
 
+## Test Program (Instructions)
+
+The thirteen instructions as shown in the table below is the test program used to test the functionality of the CPU.
+
+| Line # |      ARM Assembly     |                Machine Code             | Hexadecimal|
+|:------:|:----------------------|:---------------------------------------:|:----------:|
+|    1   | ``LDUR x0, [x2, #3]`` | 1111 1000 0100 0000 0011 0000 0100 0000 | 0xf8403040 |
+|    2   | ``ADD x9, x0, x5``    | 1000 1011 0000 0101 0000 0000 0000 1001 | 0x8b050009 |
+|    3   | ``ORR x10, x1, x9``   | 1010 1010 0000 1001 0000 0000 0010 1010 | 0xaa09002a |
+|    4   | ``AND x11, x9, x0``   | 1000 1010 0000 0000 0000 0001 0010 1011 | 0x8a00012b |
+|    5   | ``SUB x12 x0 x11``    | 1100 1011 0000 1011 0000 0000 0000 1100 | 0xcb0b000c |
+|    6   | ``STUR x9, [x3, #6]`` | 1111 1000 0000 0000 0110 0000 0110 1001 | 0xf8006069 |
+|    7   | ``STUR x10, [x4, #6]``| 1111 1000 0000 0000 0110 0000 1000 1010 | 0xf800608a |
+|    8   | ``STUR x11, [x5, #6]``| 1111 1000 0000 0000 0110 0000 1010 1011 | 0xf80060ab |
+|    9   | ``STUR x12, [x6, #6]``| 1111 1000 0000 0000 0110 0000 1100 1100 | 0xf80060cc |
+|   10   | ``B #10``             | 0001 0100 0000 0000 0000 0000 0000 1010 | 0x1400000a |
+
+## Test Program (Registers and Data Memory Setup)
+
+The instructions were entered into the instruction memory itself to properly show its functionality while simulated. 
+
+The Registers were initialized with values from 0-30 with register 31 defined set to 0 as stated in the reference sheet for LEGv8. 
+
+The Data Memory was initialized with 5 times its index value.
+
 ## Source Directories
 
 - **ARM LEGv8 CPU Module** - ARM_CPU.v
