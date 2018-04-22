@@ -3,7 +3,7 @@
 /*
 	Group Members: Nikita Eisenhauer and Warren Seto
 
-	Lab Name: ARM LEGv8 CPU Testbench  (Single-Cycle) 
+	Lab Name: ARM LEGv8 CPU Testbench (Single-Cycle) 
 */
 
 module CPU_TEST;

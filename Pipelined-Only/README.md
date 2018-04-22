@@ -1,4 +1,4 @@
-# Pipelined-Only ARM LEGv8 CPU
+# Pipelined-Only CPU
 
 ## Objective
 

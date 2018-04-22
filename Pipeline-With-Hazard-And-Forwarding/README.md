@@ -1,4 +1,4 @@
-# Pipelined with Hazard Detection and Forwarding Unit ARM LEGv8 CPU
+# Pipelined CPU with Hazard Detection and Forwarding Unit
 
 ## Objective
 

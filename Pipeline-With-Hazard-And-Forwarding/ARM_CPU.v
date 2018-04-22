@@ -1,5 +1,11 @@
 `timescale 1ns / 1ps
 
+/*
+	Group Members: Ralph Quinto and Warren Seto
+
+	Lab Name: ARM LEGv8 CPU Design (Pipelined, Hazard Detection, and Forwarding Unit) 
+*/
+
 module ARM_CPU
 (
   input RESET,

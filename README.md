@@ -1,4 +1,4 @@
-# ARM LEGv8 CPU Simulators
+# ARM LEGv8 CPU
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nextseto/ARM-LEGv8/master/LICENSE)
 
@@ -17,7 +17,7 @@ There are two ways to run and simulate the projects below. Either use the **Xili
 - Testbench + Design: SystemVerilog/Verilog
 - Tools & Simulators: Icarus Verilog 0.9.7
 
-## CPU Versions
+## Versions
 
 - [ARM LEGv8 Simulator](/Single-Cycle): This project simulates an ARM LEGv8 single cycle CPU which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``. This project is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
 

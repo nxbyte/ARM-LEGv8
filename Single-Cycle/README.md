@@ -1,4 +1,4 @@
-# Single Cycle ARM LEGv8
+# Single-Cycle CPU
 
 ## Objective
 
