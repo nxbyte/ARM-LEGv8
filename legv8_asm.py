@@ -12,7 +12,7 @@
 '''
 
 # Get Instruction from keyboard
-raw_instruction = input('\nEnter an ARM LEGv8 Instruction: ')
+raw_instruction = input('\nEnter an ARM LEGv8 Assembly Instruction: ')
 
 # Formatting the inputted string for parsing
 formatted_instruction = raw_instruction.replace(' ', ',').replace(']', '').replace('[', '')

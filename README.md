@@ -20,7 +20,7 @@ This CPU is based on the ARM architecture from the textbook: *Computer Organizat
 
 `legv8_asm.py` is an assembler that converts ARM LEGv8 assembly into machine code (binary and hex).
 
-##### Example Use
+##### Example
 
 ```
 Enter an ARM LEGv8 Instruction: LDUR x10 [x1, #10]
@@ -33,7 +33,7 @@ BINARY : 11111000010000001010000000101010
 HEX    : f840a02a
 ```
 
-## To Run & Test
+## To Simulate
 
 There are two ways to run and simulate the projects below. Either use the **Xilinx Vivado** or an online tool called **EDA Playground**.
 
