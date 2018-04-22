@@ -4,6 +4,10 @@
 
 This is a repository that contains the source code for a Verilog based ARM LEGv8 CPU.
 
+
+
+This CPU is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
+
 ## To Run & Test
 
 There are two ways to run and simulate the projects below. Either use the **Xilinx Vivado** or an online tool called **EDA Playground**.
@@ -19,11 +23,11 @@ There are two ways to run and simulate the projects below. Either use the **Xili
 
 ## Versions
 
-- [ARM LEGv8 Simulator](/Single-Cycle): This project simulates an ARM LEGv8 single cycle CPU which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``. This project is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
+- [Single-Cycle CPU](/Single-Cycle): This project simulates an ARM LEGv8 single cycle CPU which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``.
 
-- [ARM LEGv8 Simulator with Pipelining](/Pipelined-Only): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``. This project is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
+- [Pipelined-Only CPU](/Pipelined-Only): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``.
 
-- [ARM LEGv8 Simulator with Pipelining, Hazard Detection, and Forwarding Unit](/Pipeline-With-Hazard-And-Forwarding): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU with hazard detection and forwarding capabilities which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``. This project is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
+- [Pipelined CPU with Hazard Detection and Forwarding Unit](/Pipeline-With-Hazard-And-Forwarding): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU with hazard detection and forwarding capabilities which supports a subset of instructions for the ARM LEGv8 ISA. Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, ``AND``, ``CBZ`` and ``B``.
 
 ## License
 
