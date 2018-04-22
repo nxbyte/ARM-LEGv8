@@ -8,6 +8,31 @@ Supported instructions include: ``LDUR``, ``STUR``, ``ADD``, ``SUB``, ``ORR``, `
 
 This CPU is based on the ARM architecture from the textbook: *Computer Organization and Design: The Hardware/Software Interface ARM Edition by D. Patterson and J. Hennessy, Morgan Kaufmann, 2016* [ISBN: 978-012-8017333](https://www.amazon.com/Computer-Organization-Design-Interface-Architecture/dp/0128017333/ref=sr_1_1?ie=UTF8&qid=1483051663&sr=8-1&keywords=9780128017333)
 
+## Versions
+
+- [Single-Cycle](/Single-Cycle): Simulates an ARM LEGv8 single-cycle CPU
+
+- [Pipelined-Only](/Pipelined-Only): Simulates an ARM LEGv8 multi-cycle/pipelined CPU
+
+- [Pipelined with Hazard Detection and Forwarding Unit](/Pipeline-With-Hazard-And-Forwarding): Simulates an ARM LEGv8 multi-cycle/pipelined CPU with hazard detection and forwarding capabilities
+
+## Assembler
+
+`legv8_asm.py` is an assembler that converts ARM LEGv8 assembly into machine code (binary and hex).
+
+##### Example Use
+
+```
+Enter an ARM LEGv8 Instruction: LDUR x10 [x1, #10]
+
+------- C Interpretation -------
+Register[10] = RAM[ Register[1] + 10 ]
+
+------- Machine Code (32-bits) -------
+BINARY : 11111000010000001010000000101010
+HEX    : f840a02a
+```
+
 ## To Run & Test
 
 There are two ways to run and simulate the projects below. Either use the **Xilinx Vivado** or an online tool called **EDA Playground**.
@@ -20,14 +45,6 @@ There are two ways to run and simulate the projects below. Either use the **Xili
 - Login with a Google or Facebook account to save and run modules and testbenches
 - Testbench + Design: SystemVerilog/Verilog
 - Tools & Simulators: Icarus Verilog 0.9.7
-
-## Versions
-
-- [Single-Cycle CPU](/Single-Cycle): This project simulates an ARM LEGv8 single cycle CPU which supports a subset of instructions for the ARM LEGv8 ISA.
-
-- [Pipelined-Only CPU](/Pipelined-Only): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU which supports a subset of instructions for the ARM LEGv8 ISA.
-
-- [Pipelined CPU with Hazard Detection and Forwarding Unit](/Pipeline-With-Hazard-And-Forwarding): This project simulates an ARM LEGv8 multi-cycle/pipelined CPU with hazard detection and forwarding capabilities which supports a subset of instructions for the ARM LEGv8 ISA.
 
 ## License
 
