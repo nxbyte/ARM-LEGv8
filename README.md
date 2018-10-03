@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nextseto/ARM-LEGv8/master/LICENSE)
 
-This is a repository that contains the source code for a Verilog based ARM LEGv8 CPU.
+This repository contains the source code for an ARM LEGv8 CPU written in Verilog.
 
 Supported instructions include: `LDUR`, `STUR`, `ADD`, `SUB`, `ORR`, `AND`, `CBZ`, `B`, and `NOP`.
 
