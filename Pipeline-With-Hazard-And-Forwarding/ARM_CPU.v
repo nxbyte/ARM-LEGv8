@@ -389,7 +389,8 @@ module Registers
   end
 
   always @(posedge CLOCK) begin
-    if (CONTROL_REGWRITE == 1'b1) begin
+    // XZR discards writes and retains its constant zero value.
+    if (CONTROL_REGWRITE == 1'b1 && writeReg != 5'd31) begin
       Data[writeReg] = writeData;
     end
 
