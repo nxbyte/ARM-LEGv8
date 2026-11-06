@@ -708,9 +708,9 @@ module Branch
 
 	reg conditional_branch_temp;
 
-  always @(unconditional_branch_in, conditional_branch_in, alu_main_is_zero) begin
-    conditional_branch_temp <= conditional_branch_in & alu_main_is_zero;
-    PC_src_out <= unconditional_branch_in | conditional_branch_temp;
+  always @(*) begin
+    conditional_branch_temp = conditional_branch_in & alu_main_is_zero;
+    PC_src_out = unconditional_branch_in | conditional_branch_temp;
   end
 endmodule
 
